@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import TodoProvider from './context/todoContext';
+import { AddTodo, Todos } from './components/ToDo';
+import './styles/styles.css';
+import ThemeProvider from './context/themeContext';
+import ThemeWrapper from './components/ThemeWrapper';
+import { Flex } from './components/UI';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <TodoProvider>
+        <ThemeWrapper>
+          <main className="App">
+            <h1>Let&apos;s Get Stuff Done!</h1>
+            <Flex flexDirection="column" className="box--shadow rounded" text="center">
+              <AddTodo />
+              <Todos />
+            </Flex>
+          </main>
+        </ThemeWrapper>
+      </TodoProvider>
+    </ThemeProvider>
   );
 }
-
-export default App;
