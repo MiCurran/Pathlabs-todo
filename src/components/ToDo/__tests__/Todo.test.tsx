@@ -53,6 +53,6 @@ test('Zero state displays with empty todo context', () => {
       <TodoState />
     </TodoContext.Provider>
   );
-  const { queryByAltText } = render(wrapper);
-  expect(queryByAltText('Blank todo list')).toBeTruthy();
+  const {findByRole} = render(wrapper);
+  expect(findByRole('info')).toBeDefined();
 });
