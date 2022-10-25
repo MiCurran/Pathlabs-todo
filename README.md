@@ -1,4 +1,4 @@
-<img src="./.github/images/pathlabs.png" height="150px"></img>
+<img src="./.github/images/pathlabs.png" height="150px" alt='logo'></img>
 
 # Pathlabs - TypeScript To-Do App
 
@@ -30,7 +30,7 @@ npm start
 ### View The App
 
 - http://localhost:3000  
-  <img src="./.github/images/pathlabtodoimg.png" height="250px" alt='Tdd setup'></img>
+  <img src="./.github/images/pathlabtodoimg.png" height="250px" alt='app preview'></img>
 
 ### Run Tests
 
@@ -47,18 +47,18 @@ npm run test
 - Next, using TDD strategies, created typings for a todo object and context. Context includes an array of todos to share across the application as well as functions to add, update, delete and complete a task from the context provider and a loading state so we can mock some asynchronous logic across our app.  
   <img src="./.github/images/tdd.png" height="250px" alt='Tdd setup'></img>
 
-- Then with our context in place we start mocking todo data so we can create a todo component to display it appropriately. Then a "Todos" component which will display our state of todos of which there are two possiblities:  
-    1. The context is empty and a zero state image is shown
-    2. We map out our array of todos and display the previously completed todo 
-    component for each item in the array.   
-    3. Next create form components for adding and editing a todo, we used uncontrolled components. Deciding this over controlled inputs since our UI feedback necessity is minimal and we have so few inputs needed.  
-- Next thought about how a general todo list could be extended with categories and priorities, and decided to add priority tags to our todo. 
+- Then with our context in place we start mocking todo data so we can create a todo component to display it appropriately. Then a "Todos" component which will display our state of todos of which there are two possiblities:
+  1. The context is empty and a zero state image is shown
+  2. We map out our array of todos and display the previously completed todo
+     component for each item in the array.
+  3. Next create form components for adding and editing a todo, we used uncontrolled components. Deciding this over controlled inputs since our UI feedback necessity is minimal and we have so few inputs needed.
+- Next thought about how a general todo list could be extended with categories and priorities, and decided to add priority tags to our todo.
 - Finally worked on styling and theming to create a UI that was cohesive, easily understandable and functional.
 
 ## What I am proud of
 
 - No CSS library used - In the past, I have worked extensively with Tailwind, ChakraUI and Bootstrap. As well as writing SCSS, so deciding to write my own css was a fun challenge.
-- 
+-
 
 ## What I learned
 
@@ -68,8 +68,8 @@ npm run test
 ## If I took more time
 
 - We would also like the table to be able to sort by status, our sort function currently only takes in parameters type number or enum.
-- Allow the theme colors defined in config to be consumed by our theme context 
-- 
+- Allow the theme colors defined in config to be consumed by our theme context
+-
 
 ## What I would do differently / Trade-offs
 

@@ -41,7 +41,7 @@ const TodoProvider = ({ children }: { children: React.ReactNode }) => {
     let didComplete = false;
     todos.filter((todo: ITodo) => {
       if (todo.id === id) {
-        todo.status = true;
+        todo.status = !todo.status;
         setTodos([...todos]);
         didComplete = true;
       }

@@ -3,7 +3,7 @@ import { ITodo, TodoContextType } from '../../@types/todo';
 import { TodoContext } from '../../context/todoContext';
 import { EditTodo } from './';
 import { FiEdit } from 'react-icons/fi';
-import { FaCheckCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaUndo } from 'react-icons/fa';
 import { Flex, Button } from '../UI';
 
 type Props = {
@@ -28,16 +28,24 @@ const Todo: React.FC<Props> = ({ todo }) => {
         <Button
           onClick={() => setDisplay(!display)}
           bgColor={'#e2a518'}
-          className={todo.status ? `hide-button` : 'Card--button edit--button'}
+          className={'Card--button edit--button'}
         >
           <FiEdit />
         </Button>
         <Button
           onClick={() => completeTodo(todo.id)}
-          className={todo.status ? `hide-button` : 'Card--button'}
+          className={'Card--button'}
           style={{ backgroundColor: '#1B9B5B', display: 'flex', justifyContent: 'space-between' }}
         >
-          <FaCheckCircle /> Done
+          {!todo.status ? (
+            <>
+              <FaCheckCircle /> Done
+            </>
+          ) : (
+            <>
+              <FaUndo /> Undo
+            </>
+          )}
         </Button>
       </div>
       <EditDrawer todo={todo} display={display} setDisplay={setDisplay} />
